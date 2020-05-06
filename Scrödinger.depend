@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1588099244 source:c:\users\eric\documents\compu\scrödinger\schrodinger.cpp
+	"Schrodinger.h"
+
+1588170490 c:\users\eric\documents\compu\scrödinger\schrodinger.h
+	<complex>
+
+1588099726 source:c:\users\eric\documents\compu\scrödinger\main.cpp
+	<iostream>
+	<complex>
+	<cmath>
+	<fstream>
+	<string>
+	"Schrodinger.h"
+
+1588732643 source:c:\users\eric\documents\compu\schrödinger\schrodinger.cpp
+	"Schrodinger.h"
+
+1588190482 c:\users\eric\documents\compu\schrödinger\schrodinger.h
+	<complex>
+
+1588731768 source:c:\users\eric\documents\compu\schrödinger\main.cpp
+	<iostream>
+	<complex>
+	<cmath>
+	<fstream>
+	<string>
+	<cstdlib>
+	"Schrodinger.h"
+
+1588181915 c:\users\eric\documents\compu\schrödinger\complex.h
+	<math.h>
+
+1588181924 source:c:\users\eric\documents\compu\schrödinger\complex.cpp
+	<math.h>
+	"complex.h"
+
