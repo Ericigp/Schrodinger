@@ -2,6 +2,8 @@
 #define SCHRODINGER_H_INCLUDED
 
 #include <complex>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -14,6 +16,7 @@ void generador (double s, double V[], double k0,int N,double lambda,complex<doub
 void Beta (double s, double V[],int N,complex <double> b[],complex<double>phi[],complex<double>a[]);
 void Chi (int N,complex<double>a[],complex<double>b[],complex<double>chi[]);
 void Phi (int N,complex<double>chi[],complex<double>phi[],double modulo[]);
+void Script(string pot2);
 
 
 #endif // SCHRODINGER_H_INCLUDED

@@ -16,6 +16,7 @@
 #include <cmath>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <cstdlib>
 #include "Schrodinger.h"
 
@@ -29,6 +30,8 @@ int main()
     double *V,*modulo; //Potencial
     int j,t=0;//Indices el indice i queda reservado ya que nombro asi a la unidad imaginaria
     ofstream fich1,fich2,fich3;//Ficheros
+    stringstream pot;
+    string pot2;
 
     //Introducción de N
     cout<<"Introduzca N"<<endl;
@@ -103,7 +106,7 @@ int main()
 
 
     /** Implementación del algoritmo **/
-    while (t<ciclos)
+    while (t<100*ciclos)
     {
 
         //Paso 2: Calculo de beta
@@ -116,12 +119,12 @@ int main()
         Phi(N,chi,phi,modulo);
 
         //Guardo los modulos de las funciones de onda al cuadrado para su futura representación
-        for(j=0;j<N;j++)
-            fich3<<j<<" "<<modulo[j]<<"\t";
-        fich3<<endl;
-
-
-
+        if(t%10==0)
+        {
+            for(j=0;j<N;j++)
+                fich3<<j<<" "<<modulo[j]<<"\t";
+            fich3<<endl;
+        }
 
         //A modo de comprobación miro a ver si la norma se mantiene constante
         norma=0.0;
@@ -140,6 +143,10 @@ int main()
 
     /** Borrado de la memoria dínamica y fin del programa **/
 
+    pot<<V[(2*N/5)+1];
+    pot>>pot2;
+
+
     //Borrado de memoria dínamica
     delete[] V;
     delete[] modulo;
@@ -148,6 +155,10 @@ int main()
     fich1.close();
     fich2.close();
     fich3.close();
+
+    Script(pot2);
+
+
 
 
     return 0;

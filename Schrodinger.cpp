@@ -10,7 +10,6 @@
 
 #include "Schrodinger.h"
 
-
 using namespace std;
 
 void generador (double s, double V[], double k0,int N,double lambda,complex<double> phi[],complex<double>a[])
@@ -87,3 +86,31 @@ void Phi (int N,complex<double>chi[],complex<double>phi[],double modulo[])
     return;
 }
 
+//Para hacer una representación del potencial dinamico he de hacer esta chapuza
+void Script(string pot2)
+{
+    ifstream entrada;
+    ofstream salida;
+    string texto [100];
+    int i=0,n;
+
+    entrada.open("Script probabilidadog.txt");
+    salida.open("Script probabilidad.txt");
+
+    while (!entrada.eof())
+    {
+        getline(entrada,texto[i]);
+        i++;
+    }
+
+    n=i;
+    texto[13]="pot="+pot2;
+
+    for (i=0;i<n;i++)
+        salida<<texto[i]<<endl;
+
+    entrada.close();
+    salida.close();
+
+    return;
+}
